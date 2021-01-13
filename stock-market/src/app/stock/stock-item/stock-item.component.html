@@ -1,12 +1,13 @@
 <p>stock-item works!</p>
 <!-- 
 	Square bracket [] - Data flow from component into HTML
+
 	Parentheses    () - Its an event and flows from a user action to the component
 -->
 <div class="stock-container">
-	<div class="name">{{name + '(' + code + ')'}}</div>
+	<div class="name">{{stock.name + '(' + stock.code + ')'}}</div>
 	<div class="price"
-	[class] = "positiveChange ? 'positive' : 'negative'">$ {{price}}</div>
+	[class] = "stock.isPositiveChange() ? 'positive' : 'negative'">$ {{stock.price}}</div>
 	<button (click)="toggleFavorite($event)"
-			[disabled]="favorite">Add to Favorite</button>
+			[disabled]="stock.favorite">Add to Favorite</button>
 </div>

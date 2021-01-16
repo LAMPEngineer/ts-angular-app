@@ -12,5 +12,5 @@
 	[style.background-color]="stock.isPositiveChange() ? 'yellow' : 'blue'">$ {{stock.price}}</div>
 	
 	<button (click)="toggleFavorite($event)"
-			[disabled]="stock.favorite">Add to Favorite</button>
+			*ngIf="!stock.favorite">Add to Favorite</button>
 </div>

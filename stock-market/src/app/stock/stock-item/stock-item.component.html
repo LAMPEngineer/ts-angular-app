@@ -6,8 +6,11 @@
 -->
 <div class="stock-container">
 	<div class="name">{{stock.name + '(' + stock.code + ')'}}</div>
+	
 	<div class="price"
-	[ngStyle] = "stockStyles">$ {{stock.price}}</div>
+	[style.color]="stock.isPositiveChange() ? 'green' : 'red'"
+	[style.background-color]="stock.isPositiveChange() ? 'yellow' : 'blue'">$ {{stock.price}}</div>
+	
 	<button (click)="toggleFavorite($event)"
 			[disabled]="stock.favorite">Add to Favorite</button>
 </div>

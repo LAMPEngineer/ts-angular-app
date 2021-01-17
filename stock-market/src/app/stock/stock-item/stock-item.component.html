@@ -1,16 +1,15 @@
-<p>stock-item works!</p>
+<p class="heading">Welcome to Stock Market App!</p>
 <!-- 
 	Square bracket [] - Data flow from component into HTML
 
 	Parentheses    () - Its an event and flows from a user action to the component
 -->
-<div class="stock-container">
+<div class="stock-container" *ngFor="let stock of stocks; index as i">
 	<div class="name">{{stock.name + '(' + stock.code + ')'}}</div>
 	
 	<div class="price"
-	[style.color]="stock.isPositiveChange() ? 'green' : 'red'"
-	[style.background-color]="stock.isPositiveChange() ? 'yellow' : 'blue'">$ {{stock.price}}</div>
+	[class]="stock.isPositiveChange() ? 'positive' : 'negative'">$ {{stock.price}}</div>
 	
-	<button (click)="toggleFavorite($event)"
-			*ngIf="!stock.favorite">Add to Favorite</button>
+	<button (click)="toggleFavorite($event, i)"
+			[disabled]="stock.favorite">Add to Favorite</button>
 </div>

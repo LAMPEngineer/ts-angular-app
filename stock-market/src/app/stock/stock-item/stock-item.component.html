@@ -4,7 +4,7 @@
 
 	Parentheses    () - Its an event and flows from a user action to the component
 -->
-<div class="stock-container" *ngFor="let stock of stocks; index as i">
+<div class="stock-container" *ngFor="let stock of stocks; index as i; trackBy: trackStockByCode">
 	<div class="name">{{stock.name + '(' + stock.code + ')'}}</div>
 	
 	<div class="price"

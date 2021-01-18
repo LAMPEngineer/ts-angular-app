@@ -28,4 +28,10 @@ export class StockItemComponent implements OnInit {
   	this.stocks[index].favorite = !this.stocks[index].favorite;
   }
 
+
+  trackStockByCode(index: any, stock: any){
+  	return stock.code;
+  }
+
+
 }

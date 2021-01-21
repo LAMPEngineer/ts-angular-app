@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Stock } from '../../model/stock';
 
@@ -11,12 +11,15 @@ import { Stock } from '../../model/stock';
 export class StockItemComponent {
 
   @Input() public stock!: Stock;
+  @Output() private toggleFavorite: EventEmitter<Stock>;
 
-  constructor() { }
+  constructor() { 
+  	this.toggleFavorite = new EventEmitter<Stock>();
+  }
 
   
-  toggleFavorite(event: any){
-  	this.stock.favorite = !this.stock.favorite;
+  onToggleFavorite(event: any){
+  	this.toggleFavorite.emit(this.stock);
 
   }
 

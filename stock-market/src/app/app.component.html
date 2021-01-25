@@ -341,8 +341,13 @@
   <!-- new component -->
   <div style="text-align:center">
     <!--<h1>{{title}}</h1> -->
-    <app-stock-item [stock]="stock"
-                    (toggleFavorite)="onToggleFavorite($event)"></app-stock-item>
+    <app-stock-item [stock]="stockObj">
+      <button (click)="testMethod()">With Button 1</button>
+    </app-stock-item>
+
+    <app-stock-item [stock]="stockObj">
+      No button for you!!
+    </app-stock-item>
   </div>
 
   <!-- Resources -->

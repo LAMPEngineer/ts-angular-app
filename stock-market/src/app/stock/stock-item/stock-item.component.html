@@ -1,4 +1,4 @@
-<p class="heading">Welcome to Stock Market App!</p>
+
 <!-- 
 	Square bracket [] - Data flow from component into HTML
 
@@ -8,8 +8,8 @@
 	<div class="name">{{stock.name + '(' + stock.code + ')'}}</div>
 	
 	<div class="price"
-	[class]="stock.isPositiveChange() ? 'positive' : 'negative'">$ {{stock.price}}</div>
+		[class]="stock.isPositiveChange() ? 'positive' : 'negative'">$ {{stock.price}}
+   </div>
 	
-	<button (click)="onToggleFavorite($event)"
-			*ngIf="!stock.favorite">Add to Favorite</button>	
+	<ng-content></ng-content>
 </div>

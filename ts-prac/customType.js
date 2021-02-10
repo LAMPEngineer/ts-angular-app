@@ -1,4 +1,5 @@
 // custom type variable
+// inline anotation
 var drawPoint = function (point) {
     //...
 };

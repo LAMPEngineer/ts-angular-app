@@ -7,9 +7,17 @@ interface Point {
 
 
 
+
 let drawPoint = (point: Point) => {
     //...
 };
+
+
+
+let getDistance = (pointA: Point, pointB: Point) => {
+	//...
+}
+
 
 
 drawPoint({

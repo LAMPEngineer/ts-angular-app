@@ -4,7 +4,7 @@ class Point{
 	y: number;
 
 	draw() {
-		//...
+		console.log('X: ' + this.x + ', Y: ' + this.y);
 	}
 
 
@@ -13,3 +13,7 @@ class Point{
 	}
 
 }
+
+
+let point = new Point();
+point.draw();

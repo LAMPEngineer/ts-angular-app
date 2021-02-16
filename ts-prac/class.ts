@@ -2,7 +2,9 @@
 class Point{
 
 
+
 	constructor(private x?: number, private y?: number) {		
+
 	}
 
 
@@ -12,28 +14,28 @@ class Point{
 
 
 	// getter & setter
-	getX() {
+	get X() {
 		return this.x;
 	}
 
 
-	setX(value) {
-		if (value < 0) {
-			throw new Error('value cannot be less than 0.');
+	set X(value) {
 
-		this.x = value;			
-			
-		}
+		if (value < 0)
+			throw new Error('value cannot be less than 0.');					
+		
+		this.x = value;
 	}
 
 }
 
 
-let point = new Point(1,2);
+let point = new Point(1,3);
 
-let x = point.getX();
-point.setX(5);
-let xNew = point.getX();
+let x = point.X;
+point.X = 6;
+let xNew = point.X;
+
 console.log('X old: ' + x + ' and X new: ' + xNew);
 
 point.draw();

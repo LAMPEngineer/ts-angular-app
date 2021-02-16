@@ -7,21 +7,24 @@ var Point = /** @class */ (function () {
     Point.prototype.draw = function () {
         console.log('X: ' + this.x + ', Y: ' + this.y);
     };
-    // getter & setter
-    Point.prototype.getX = function () {
-        return this.x;
-    };
-    Point.prototype.setX = function (value) {
-        if (value < 0) {
-            throw new Error('value cannot be less than 0.');
+    Object.defineProperty(Point.prototype, "X", {
+        // getter & setter
+        get: function () {
+            return this.x;
+        },
+        set: function (value) {
+            if (value < 0)
+                throw new Error('value cannot be less than 0.');
             this.x = value;
-        }
-    };
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Point;
 }());
-var point = new Point(1, 2);
-var x = point.getX();
-point.setX(5);
-var xNew = point.getX();
+var point = new Point(1, 3);
+var x = point.X;
+point.X = 6;
+var xNew = point.X;
 console.log('X old: ' + x + ' and X new: ' + xNew);
 point.draw();

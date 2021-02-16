@@ -1,7 +1,5 @@
-function log(message) {
-	console.log(message);
-}
 
-var message = "Hi GTM";
+import { Point } from './point';
 
-log(message);
+let point = new Point(1, 2);
+point.draw();

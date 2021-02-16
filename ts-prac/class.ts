@@ -3,38 +3,38 @@ class Point{
 
 
 
-	constructor(private x?: number, private y?: number) {		
+	constructor(private _x?: number, private _y?: number) {		
 
 	}
 
 
 	draw() {
-		console.log('X: ' + this.x + ', Y: ' + this.y);
+		console.log('X: ' + this._x + ', Y: ' + this._y);
 	}
 
 
 	// getter & setter
-	get X() {
-		return this.x;
+	get x() {
+		return this._x;
 	}
 
 
-	set X(value) {
+	set x(value) {
 
 		if (value < 0)
 			throw new Error('value cannot be less than 0.');					
 		
-		this.x = value;
+		this._x = value;
 	}
 
 }
 
 
-let point = new Point(1,3);
+let point = new Point(2,4);
 
-let x = point.X;
-point.X = 6;
-let xNew = point.X;
+let x = point.x;
+point.x = 5;
+let xNew = point.x;
 
 console.log('X old: ' + x + ' and X new: ' + xNew);
 

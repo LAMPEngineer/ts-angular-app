@@ -1,4 +1,4 @@
-let message;
+var message;
 message = 'abc';
-let endsWithC = message.endsWith('c');
-let alternativeWay = message.endsWith('c');
+var endsWithC = message.endsWith('c');
+var alternativeWay = message.endsWith('c');

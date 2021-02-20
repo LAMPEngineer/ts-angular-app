@@ -1,2 +1,2 @@
-# typescript-angular
-Typescript for angular
+# typescript-angular app
+Typescript for angular app
